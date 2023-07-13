@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "icon" href = ".\assets\images\logo_1.png" type = "image/x-icon">
+    <link rel="stylesheet" href=".\css\inline_style.css">
+    <link rel="stylesheet" href=".\css\style.css">
+
+    <script src="https://kit.fontawesome.com/a6dc7d3f27.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" href="./js/functions.js"></script> -->
+
+
+    <script>
+        // necessary for every page -start
+    class setup
+    {
+        constructor()
+        {
+            this.user = sessionStorage.getItem("User");
+        }
+        pic() {
+            console.log(this.user)
+            if (this.user)
+            {             
+                let profile = document.getElementById("profile");
+                document.getElementById("prof").style.display="block";
+                let signin = document.getElementById("sign_in");
+                // let element = document.getElementById("profile_div");
+
+                signin.style.display = "none";
+                profile.style.display = "block";
+                // console.log("hello moto");
+                // profile.style.whiteSpace = "nowrap";
+                profile.innerHTML =  '<i class="fa fa-user" aria-hidden="true"></i>&nbsp' + this.user ;
+
+            }
+            
+
+        return;
+        }
+
+    }
+    function transfer(e)
+{
+    if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'M')
+    {
+        window.location.replace("./view-watches.html");
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'W')
+    {
+        window.location.replace("./view-watches-women.html");
+
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'S')
+    {
+        window.location.replace("./view-watches-smartwatch.html");
+
+    }
+}
+function fnc_product_view_page(e)
+{
+    // if(e.getAttribute("class") == "QuickViewPlp")
+        // return;
+
+    localStorage.setItem("currentpage" , e);
+    window.location.replace("./product_info.html");
+}
+
+
+function transfer_toall(e)
+{
+    if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'M')
+    {
+        window.location.replace("./features-men-watch.html");
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'W')
+    {
+        window.location.replace("./features-women-watch.html");
+
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'S')
+    {
+        window.location.replace("./features-smart-watch.html");
+
+    }
+}
+    </script>
+</head>
+<body>
+    <header >
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 20%;">
+        <a href=".\index.html"><img src=".\assets\images\logo.png" alt="logo" height="50px"></a>
+                </td>
+                <td>
+        <input type="text" class="" style="width:90%; height:30px;color:#212529; border-radius: 0.25rem;text-decoration: none;" placeholder="Search.." style="width:50%; height: 20%;" >
+        <button class="" style="height:35px;width:35px;border-radius:7px;text-decoration: none;" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+
+                </td>
+                <td style="width: 20%;font-size: large;">
+                    <a class="sign-in" id="sign_in" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Sign In</a>
+                    <div class="prof" id="prof" style="display: none;" >
+                        <a id="profile" href="./profile.html" class="sign-in" style="margin-top: -5px;"  name="profile">My profile</a>
+                        <ul class="dropbtn" style="top: 25px;margin-left: -108px;position: absolute;display: none;min-width: 10rem;z-index: 1;font-size: 1rem;color: #212529;text-align: left;list-style: none;background-color: #fff;background-clip: padding-box;border: 1px solid rgba(0,0,0,.15);border-radius: .25rem;">
+                            <li><a class="dropdown-item" href="./profile.html" onmouseenter="this.style.color='#0087ca';this.style.fontWeight ='bold';" onmouseleave="this.style = 'none';" href="#">My profile</a></li>
+                            <li><hr class="dropdown-divider" ></li>    
+                            <li><a class="dropdown-item" onmouseenter="this.style.color='#0087ca';this.style.fontWeight ='bold';" onmouseleave="this.style = 'none';" href="#">Wish List</a></li>
+                            <li><hr class="dropdown-divider" ></li>    
+
+                            <li><a class="dropdown-item" onmouseenter="this.style.color='red';this.style.fontWeight ='bold';" onmouseleave="this.style = 'none';" href="logout.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <a class="cart" style="position: relative;bottom: -11px;" href="./cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <div class="menu" >
+            <table width="100%" height="60px">
+                <tr>
+                    <td style="width: 20%;"></td>
+                    <td>
+                        <table width="100%" style="font-size: larger;font-family: var(--bs-font-sans-serif);">
+                            <tr>
+                                <td class = "category-names hover-underline-animation">MENS</td>
+                                <td class = "category-names hover-underline-animation">WOMENS</td>
+                                <td class = "category-names hover-underline-animation">SMARTWATCHES</td>
+                                <td class = "hover-underline-animation" style="color: #0d6efd;" onmouseenter="this.style.color='#1a68db';this.style.cursor = 'pointer';">SALE</td>
+                                <td class = "hover-underline-animation" style="color: #0d6efd;" onmouseenter="this.style.color='#1a68db';this.style.cursor = 'pointer';">FEATURED</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width: 20%;"></td>
+                </tr>
+            </table>
+        </div>
+    </header>
+
+
+    <!-- main content - start -->
+
+    <div class="">
+        <img src="./assets/banner/women_banner_1.gif" onclick="localStorage.setItem('currentpage' , 'Calligraphy by Nebula - 18 Karat Solid Gold Analog Watch');window.location.replace('./product_info.html');" width="100%" height="400px"/>
+    </div>
+
+    
+    <div class="">
+        <img src="./assets/banner/women_banner_2.jpg" onclick="localStorage.setItem('currentpage' , 'Parisa from Deccan Treasures');window.location.replace('./product_info.html');" width="100%" height="400px"/>
+    </div>
+
+    
+    <div class="">
+        <img src="./assets/banner/women_banner_3.jpg" onclick="localStorage.setItem('currentpage' , 'Azarin from Deccan Treasures');window.location.replace('./product_info.html');" width="100%" height="400px"/>
+    </div>
+
+    
+    <div class="">
+        <img src="./assets/banner/women_banner_4.jpg" onclick="localStorage.setItem('currentpage' , 'Piroi from Deccan Treasures');window.location.replace('./product_info.html');" width="100%" height="400px"/>
+    </div>
+
+    
+    <div class="">
+        <img src="./assets/banner/women_banner_5.jpg" onclick="localStorage.setItem('currentpage' , 'Atulya- The unparalleled');window.location.replace('./product_info.html');" width="100%" height="400px"/>
+    </div>
+
+    <!-- main content - end -->
+
+
+
+
+
+    <footer class="footer-font"  style='width: 100%;height: 400px;background-color: #1b1a1a;color: #f1eded;height: 400px; font-size: 15px;'>
+        <div class="somethingidiotic" style="height: 50px;"></div>
+        <table style="width: 90%;bottom: 0;height: 308px;">
+            <thead>
+                <th colspan="2"></th>
+                <th>HAPPY</th>
+                <th>SHOPPING</th>
+                <th>NEWSPAPER</th>
+            </thead>
+            <tr>
+                <td  colspan="2" style="width: 33%;">
+                    <span class="text-center" ><pre style="font-family: cursive;">
+                        The customer is at the heart of our
+                        unique business model, which
+                        includes design.
+                    </pre></span>
+                </td>
+                <td></td>
+                <td></td>
+                <td colspan="2" style="width: 33%;">
+                    <span class="text-center" ><pre style="font-family: cursive;">
+                        Be the first to know about new
+                        arrivals, look books, sales & promos!
+                    </pre></span>
+                    <input type="email" placeholder="Email..." style="width: 100%;font-size: 15px;color: #3d3d3d;background: transparent;border: none;padding: 15px 0;border-bottom: 2px solid #ffffff;" name="" id="">
+    
+                </td>
+            </tr>            
+        </table>
+        <tr></tr>
+        <p style="justify-content: center;display: flex;font-family: cursive;">Copyright ©2022 | All rights reserved | &nbsp;&nbsp;<a href=".\copyright.html" style="text-decoration: none;color: red;" target="_blank" rel="noopener noreferrer">copyright</a> </p>
+    
+    </footer>
+</body>
+</html>
+
+
+<script>
+    $(document).ready(function (){
+
+const user = new setup();
+user.pic();
+
+
+    
+    $(".category-names").hover(function (){
+        $(this).append("<div class='header-menu-list' style='text-decoration:none;position:fixed;overflow: overlay;padding:10px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);width:120px ;background-color: white;'><ul><li><a style='text-decoration:none;color:black;padding: .25rem 1rem;' class='header-list-item' onclick='transfer(this)' onmouseenter=' $(this).parent().css(\"background-color\",\"#ddd\");' onmouseleave = '$(this).parent().css(\"background-color\",\"\");'>View All</a></li><br><li><a style='text-decoration:none;color:black;padding: .25rem 1rem;' class='header-list-item' href='#' onmouseenter=' $(this).parent().css(\"background-color\",\"#ddd\");' onclick='transfer_toall(this)' onmouseleave = '$(this).parent().css(\"background-color\",\"\");'>Featured</a></li></ul></div>");
+        // $(".header-list-item").css("color", "skyblue");
+        $(".header-list-item").css("position", "relative");
+        $(".header-list-item").css("white-space", "nowrap");
+        $(".header-list-item").css("z-index", "1000");
+        $(".header-list-item").css("vertical-align", "inherit");
+        $(".header-list-item").css("background-clip", "padding-box");
+
+        console.log("hello moto");
+    } , function(){
+        $(".header-menu-list").remove();
+        $(".header-list-item").css("color", "black");
+
+    });
+
+    $(".prof , .dropbtn").hover(function () {
+        // hov enter
+        $(".dropbtn").css("display" , "inline");
+        console.log("ok");
+    } , function () {
+        // hov leave
+        $(".dropbtn").css("display" , "none");
+    });
+
+   
+
+});
+</script>

@@ -1,0 +1,263 @@
+{
+    "products":
+    [
+        {
+         "web-scraper-order": "product_1",
+         "name": "Calligraphy by Nebula - 18 Karat Solid Gold Analog Watch",
+         "price": 695000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5586DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_2",
+         "name": "Parisa from Deccan Treasures",
+         "price": 375000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5524DM04_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_3",
+         "name": "Azarin from Deccan Treasures",
+         "price": 375000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5573DM02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_4",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 375000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5573DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_5",
+         "name": "Piroi from Deccan Treasures",
+         "price": 365000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5538DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_6",
+         "name": "Aalia - Inspired by Kufic Calligraphy",
+         "price": 345000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5575DM02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_7",
+         "name": "Aanya - Unyielding strength",
+         "price": 335000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5542DM02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_8",
+         "name": "Atulya- The unparalleled",
+         "price": 295000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5567DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_9",
+         "name": "Ashvi by Nebula - 18 Karat Solid Gold Watch",
+         "price": 275000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5567DM06_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_10",
+         "name": "Ashvi by Nebula - 18 Karat Solid Gold Watch",
+         "price": 275000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5578DM03_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_11",
+         "name": "18 Karat Solid Gold Analog Golden Dial Watch for Women",
+         "price": 265000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5578DM04_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_12",
+         "name": "18 Karat Solid Gold Analog Golden Dial Watch for Women",
+         "price": 260000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5578DM06_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_13",
+         "name": "18 Karat Solid Gold Analog Watch for Women",
+         "price": 240000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5578DM08_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_14",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 235000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5587DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_15",
+         "name": "Naira from Deccan Treasures",
+         "price": 230400,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5536DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_16",
+         "name": "Ashvi by Nebula - 18 Karat Solid Gold Watch",
+         "price": 225000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5573DM03_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_17",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 215000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5578DM05_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_18",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 210000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/2028DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_19",
+         "name": "Lotus by Nebula - 18 Karat Solid Gold Analog Watch",
+         "price": 185000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/2024DM02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_20",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 175000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5560DL01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_21",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 175000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5501DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_22",
+         "name": "18 Karat Solid Gold Analog Blue Dial Watch",
+         "price": 170000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/2025DM02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_23",
+         "name": "18 Karat Solid Gold Analog Green Dial Watch",
+         "price": 155000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5580DL01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_24",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 155000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5580DL03_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_25",
+         "name": "Calligraphy by Nebula - 18 Karat Solid Gold Analog Watch",
+         "price": 150000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5507DM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_26",
+         "name": "Calligraphy by Nebula - 18 Karat Solid Gold Analog Watch",
+         "price": 125000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5541DL03_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_27",
+         "name": "Calligraphy by Nebula - 18 Karat Solid Gold Analog Watch",
+         "price": 115000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5541DL01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_28",
+         "name": "Ayna from Deccan Treasures",
+         "price": 115000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5542DL02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_29",
+         "name": "Lustre from Nebula - 18 Karat Solid Gold Watch",
+         "price": 110000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5584DL02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_30",
+         "name": "Lustre from Nebula - 18 Karat Solid Gold Watch",
+         "price": 82000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5572DL02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_31",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 82000,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/5572DL01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_32",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 47500,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/993DL02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_33",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 47500,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/993DL01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_33",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 47500,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/993DL05_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_34",
+         "name": "Nebula Watch with Yellow Dial Leather Strap Watch for Women",
+         "price": 39500,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/991DL01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_35",
+         "name": "18 Karat Solid Gold Analog Blue Dial Watch",
+         "price": 39500,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/991DL12_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_36",
+         "name": "18 Karat Solid Gold Analog Watch",
+         "price": 39500,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/991DL15_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_37",
+         "name": "Raga Silver Mother Of Pearl Dial Silver Strap Watch",
+         "price": 39500,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/991DL02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_38",
+         "name": "Raga Silver Mother Of Pearl Dial Silver Strap Watch",
+         "price": 31995,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/9893VM02_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_39",
+         "name": "Mother Of Pearl Dial Steel & Ceramic Strap Watch",
+         "price": 25995,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/9897VM03_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_40",
+         "name": "Mother of Pearl Dial Two Toned Stainless Steel Strap Watch",
+         "price": 25000,
+         "images_src": "https://staticimg.titan.co.in/Xylys/Catalog/9766WD02M_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_41",
+         "name": "Raga Ceramics Blue Dial Metal Strap Watch",
+         "price": 24000,
+         "images_src": "https://staticimg.titan.co.in/Xylys/Catalog/45015KM01_1.jpg?impolicy=pqmed&imwidth=640"
+        },
+        {
+         "web-scraper-order": "product_42",
+         "name": "Coach Silver Dial Two Toned Stainless Steel Strap Watch",
+         "price": 23495,
+         "images_src": "https://staticimg.titan.co.in/Titan/Catalog/95148KD02_2.jpg?impolicy=pqmed&imwidth=640"
+        }
+       ]
+}

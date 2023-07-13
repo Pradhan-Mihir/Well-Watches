@@ -1,0 +1,525 @@
+<html lang="en">
+
+<head>
+
+  <link rel = "icon" href = ".\assets\images\logo_1.png" type = "image/x-icon">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href=".\css\inline_style.css">
+  <link rel="stylesheet" href=".\css\style.css">
+
+  <script src="https://kit.fontawesome.com/a6dc7d3f27.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+  <style>
+    .QuickViewPlp
+    {
+      align-items: center;
+    background-color: #222!important;
+    border-color: #222!important;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom:15px; 
+    justify-content: center;
+    visibility: hidden;
+    overflow: hidden;
+    }
+  </style>
+<script>
+  class setup
+    {
+        constructor()
+        {
+            this.user = sessionStorage.getItem("User");
+        }
+        pic() {
+            console.log(this.user)
+            if (this.user)
+            {             
+                let profile = document.getElementById("profile");
+                document.getElementById("prof").style.display="block";
+                let signin = document.getElementById("sign_in");
+                // let element = document.getElementById("profile_div");
+
+                signin.style.display = "none";
+                profile.style.display = "block";
+                // console.log("hello moto");
+                // profile.style.whiteSpace = "nowrap";
+                profile.innerHTML =  '<i class="fa fa-user" aria-hidden="true"></i>&nbsp' + this.user ;
+
+            }
+            
+
+        return;
+        }
+
+    }
+
+        function fnc_sign_in()
+        {
+            window.location.href = "./login.html";
+        }
+
+        
+        function transfer(e)
+{
+    if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'M')
+    {
+        window.location.replace("./view-watches.html");
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'W')
+    {
+        window.location.replace("./view-watches-women.html");
+
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'S')
+    {
+        window.location.replace("./view-watches-smartwatch.html");
+
+    }
+}
+
+function fnc_data_for_modal(e)
+  {
+    let modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    console.log("hello");
+    let arr = e.getAttribute("id");
+    let ind =arr.split('_');
+    let index = ind[0];
+    console.log(parseInt(index));
+    let img = document.getElementById(index+"_image").src;
+    let price = "₹" +  document.getElementById(index+"_price").innerHTML;
+    let name =  document.getElementById(index+"_name").innerHTML;
+    console.log(img);
+    console.log(price);
+    console.log(name);
+    document.getElementById("name").innerHTML = name;
+    document.getElementById("name").classList.add = "text-center";
+    document.getElementById("price").innerHTML = price +"<p style='font-size:smaller;color:coral;'>OFFER PRICE</p>";
+    document.getElementById("image").src = img;
+    document.getElementById("image").alt = name;
+    document.getElementById("highlight").innerHTML = "<br/><h5>Highlights</h5><br><br><ul><li>Analog</li><li>Water reistant</li>";
+
+  }
+
+  function fnc_add_cart(e)
+  {
+    if(sessionStorage.getItem('cart'))
+    {
+        let retrievedObject = sessionStorage.getItem('cart');
+        let cart = JSON.parse(retrievedObject);
+
+        cart.push(document.getElementById("name").innerHTML);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+
+    }
+    else
+    {
+        let cart = []
+        cart.push(document.getElementById("name").innerHTML);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+
+    }
+
+  }
+
+// item added to cart - start
+
+function added_to_cart_popup()
+    {
+      // document.write("hello") ;
+      let popup = document.getElementById("notication-popup");
+      
+      // popup.classList.add("visible");
+      popup.classList.replace("hidden" , "visible");
+
+
+      setTimeout( function (){
+        let popup = document.getElementById("notication-popup");
+        popup.classList.replace("visible" , "hidden");
+  
+      } , 2000);
+
+    }
+
+  function fnc_product_hover_enter(e)
+  {
+    e.style.transform = "scale3d(1.05, 1.05, 1.05)";
+    let quickview = e.querySelector(".QuickViewPlp");
+    let like = e.querySelector(".fa-heart");
+    quickview.style.visibility = "visible";
+    like.style.visibility = "visible";
+  }
+
+  function fnc_product_hover_leave(e)
+  {
+    e.style.transform = "scale3d(1, 1, 1)";
+    let quickview = e.querySelector(".QuickViewPlp");
+    quickview.style.visibility = "hidden";
+    let like = e.querySelector(".fa-heart");
+    if(check_liked(like))
+      like.style.visibility = "hidden";
+  }
+  function fnc_like(e)
+  {
+    if(check_liked(e))
+    {
+      e.classList.remove("fa-regular");
+      e.classList.add("fa");
+    }
+    else
+    {
+      e.classList.remove("fa");
+      e.classList.add("fa-regular");
+    }
+  }
+  function check_liked(e)
+  {
+    // console.log("checking liked or not");
+
+    if(e.classList.contains('fa-regular'))
+      return true;
+    else
+      return false;
+  }
+  
+function fnc_pricefilter(e)
+{
+  $(".for_hide").css("display" , "none");
+
+  let val = (parseInt(e.value));
+
+  if(val < 50001)
+  {
+    console.log("50000");
+    $("#for_hide_6").css("display" , "block");
+    $("#for_hide_15").css("display" , "block");
+    
+  }
+  if(val < 15001)
+  {
+    console.log("15");
+
+    $("#for_hide_33").css("display" , "block");
+  }
+   if(val < 15001)
+  {
+    console.log("5");
+
+    $("#for_hide_30").css("display" , "block");
+    $("#for_hide_27").css("display" , "block");
+    $("#for_hide_24").css("display" , "block");
+    $("#for_hide_21").css("display" , "block");
+    $("#for_hide_18").css("display" , "block");
+    $("#for_hide_12").css("display" , "block");
+    $("#for_hide_3").css("display" , "block");
+    
+  }
+   if(val < 1001)
+  {
+    console.log("1");
+
+    $("#for_hide_0").css("display" , "block");
+    $("#for_hide_9").css("display" , "block");
+    $("#for_hide_36").css("display" , "block");
+  }
+
+  document.body.innerHTML = document.body.innerHTML.replaceAll("<br><br><br>" , "<br>");
+
+}
+  
+function rdb_fnc_change(e)
+{
+  $(".for_hide").css("display" , "none");
+
+  if(e.value == 't')
+  {
+    $("#for_hide_6").css("display" , "block")
+    $("#for_hide_15").css("display" , "block")
+    
+  
+    $("#for_hide_0").css("display" , "block")
+    $("#for_hide_9").css("display" , "block")
+    $("#for_hide_18").css("display" , "block")
+    $("#for_hide_36").css("display" , "block")
+  }
+  else
+  {
+    $("#for_hide_33").css("display" , "block");  
+    $("#for_hide_30").css("display" , "block")
+    $("#for_hide_27").css("display" , "block")
+    $("#for_hide_24").css("display" , "block")
+    $("#for_hide_21").css("display" , "block")
+    $("#for_hide_12").css("display" , "block")
+    $("#for_hide_3").css("display" , "block")
+    
+  
+  }
+  document.body.innerHTML = document.body.innerHTML.replaceAll("<br><br><br>" , "<br>");
+
+}
+
+function fill_data()
+  {
+    // e=;
+    fetch('./products.json').then(function (results){
+            return results.json();
+        }).then(function (data){
+            for(let i = 0 ; i < data["products"].length-3;i=i+3)
+            {
+                let prd = "products";   
+                let ii = i+1;
+                let iii = ii+1;                
+                document.getElementById("product_row").innerHTML +=  '<table class="for_hide" id="for_hide_'+i+'"><tr><td  style="width: 377px; overflow:none;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border: 1px solid;"><div  id="'+i+'_column"onmouseleave="fnc_product_hover_leave(this);" onmouseenter="fnc_product_hover_enter(this);"><i id="'+i+'_like" onclick="fnc_like(this);"class="fa-regular fa-heart"style="visibility:hidden;position: absolute;top:0;margin-top: 15px;overflow: auto;display: grid;transform: scale3d(1.5, 1.5, 1.5);margin-left: 10px;"></i><div onclick="fnc_product_view_page(&apos;'+data[prd][i].name+'&apos;)"><img id="'+i+'_image" width="370px" loading="lazy" class="card-img" src="'+data["products"][i].images_src+'" alt="card-img"></img><p id="'+i+'_name" class="" style="overflow:hidden;justify-content:center;display:flex;">'+data["products"][i].name+'</p><div class="card-price"><div class="sameLine" style="justify-content:center;display:flex;"><span>₹</span> <span id="'+i+'_price" name="price" >'+data["products"][i].price+'</span></div></div></div><div class="QuickViewPlp" id="'+i+'_quickview" data-bs-toggle="modal" data-bs-target="#exampleModal"onclick="fnc_data_for_modal(this);"><div>Quick View</div></div></div></td><br /><td   style="width: 377px; overflow:none;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border: 1px solid;"><div  id="'+parseInt(ii)+'_column"onmouseleave="fnc_product_hover_leave(this);" onmouseenter="fnc_product_hover_enter(this);"><i id="'+parseInt(ii)+'_like" onclick="fnc_like(this);"class="fa-regular fa-heart"style="visibility:hidden;position: absolute;top:0;margin-top: 15px;overflow: auto;display: grid;transform: scale3d(1.5, 1.5, 1.5);margin-left: 10px;"></i><div onclick="fnc_product_view_page(&apos;'+data[prd][ii].name+'&apos;)"><img id="'+parseInt(ii)+'_image" width="370px" loading="lazy" class="card-img" src="'+data["products"][parseInt(ii)].images_src+'" alt="card-img"></img><p id="'+parseInt(ii)+'_name" class="" style="overflow:hidden;justify-content:center;display:flex;">'+data["products"][parseInt(ii)].name+'</p><div class="card-price"><div class="sameLine" style="justify-content:center;display:flex;"><span>₹</span> <span id="'+parseInt(ii)+'_price" name="price" >'+data["products"][parseInt(ii)].price+'</span></div></div></div><div class="QuickViewPlp" id="'+parseInt(ii)+'_quickview" data-bs-toggle="modal" data-bs-target="#exampleModal"onclick="fnc_data_for_modal(this);"><div>Quick View</div></div></div></td><br /><td   style="width: 377px; overflow:none;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border: 1px solid;"><div  id="'+parseInt(iii)+'_column"onmouseleave="fnc_product_hover_leave(this);" onmouseenter="fnc_product_hover_enter(this);"><i id="'+parseInt(iii)+'_like" onclick="fnc_like(this);"class="fa-regular fa-heart"style="visibility:hidden;position: absolute;top:0;margin-top: 15px;overflow: auto;display: grid;transform: scale3d(1.5, 1.5, 1.5);margin-left: 10px;"></i><div onclick="fnc_product_view_page(&apos;'+data[prd][i].name+'&apos;)"><img id="'+parseInt(iii)+'_image" width="370px" loading="lazy" class="card-img" src="'+data["products"][parseInt(iii)].images_src+'" alt="card-img"></img><p id="'+parseInt(iii)+'_name" class="" style="overflow:hidden;justify-content:center;display:flex;">'+data["products"][parseInt(iii)].name+'</p><div class="card-price"><div class="sameLine" style="justify-content:center;display:flex;"><span>₹</span> <span id="'+parseInt(iii)+'_price" name="price">'+data["products"][parseInt(iii)].price+'</span></div></div></div><div class="QuickViewPlp" id="'+parseInt(iii)+'_quickview" data-bs-toggle="modal" data-bs-target="#exampleModal"onclick="fnc_data_for_modal(this);"><div>Quick View</div></div></div></td><br /></tr></table>';
+
+
+            }
+        });
+  }
+
+
+  function fnc_product_view_page(e)
+{
+    localStorage.setItem("currentpage" , e);
+    window.location.replace("./product_info.html");
+}
+
+function transfer_toall(e)
+{
+    if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'M')
+    {
+        window.location.replace("./features-men-watch.html");
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'W')
+    {
+        window.location.replace("./features-women-watch.html");
+
+    }
+    else if(e.parentElement.parentElement.parentElement.parentElement.innerHTML[0] == 'S')
+    {
+        window.location.replace("./features-smart-watch.html");
+
+    }
+}
+</script>
+</head>
+
+<body>
+
+  <header >
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 20%;">
+    <a href=".\index.html"><img src=".\assets\images\logo.png" alt="logo" height="50px"></a>
+            </td>
+            <td>
+    <input type="text" class="" style="width:90%; height:30px;color:#212529; border-radius: 0.25rem;text-decoration: none;" placeholder="Search.." style="width:50%; height: 20%;" >
+    <button class="" style="height:35px;width:35px;border-radius:7px;text-decoration: none;" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+
+            </td>
+            <td style="width: 20%;font-size: large;">
+                <a class="sign-in" id="sign_in" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Sign In</a>
+                <div class="prof" id="prof" style="display: none;" >
+                    <a id="profile" href="./profile.html" class="sign-in" style="margin-top: -5px;"  name="profile">My profile</a>
+                    <ul class="dropbtn" style="top: 25px;margin-left: -108px;position: absolute;display: none;min-width: 10rem;z-index: 1;font-size: 1rem;color: #212529;text-align: left;list-style: none;background-color: #fff;background-clip: padding-box;border: 1px solid rgba(0,0,0,.15);border-radius: .25rem;">
+                        <li><a class="dropdown-item" href="./profile.html" onmouseenter="this.style.color='#0087ca';this.style.fontWeight ='bold';" onmouseleave="this.style = 'none';" href="#">My profile</a></li>
+                        <li><hr class="dropdown-divider" ></li>    
+                        <li><a class="dropdown-item" onmouseenter="this.style.color='#0087ca';this.style.fontWeight ='bold';" onmouseleave="this.style = 'none';" href="#">Wish List</a></li>
+                        <li><hr class="dropdown-divider" ></li>    
+
+                        <li><a class="dropdown-item" onmouseenter="this.style.color='red';this.style.fontWeight ='bold';" onmouseleave="this.style = 'none';" href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+                <a class="cart" style="position: relative;bottom: -11px;" href="./cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <div class="menu" >
+        <table width="100%" height="60px">
+            <tr>
+                <td style="width: 20%;"></td>
+                <td>
+                    <table width="100%" style="font-size: larger;font-family: var(--bs-font-sans-serif);">
+                        <tr>
+                            <td class = "category-names hover-underline-animation">MENS</td>
+                            <td class = "category-names hover-underline-animation">WOMENS</td>
+                            <td class = "category-names hover-underline-animation">SMARTWATCHES</td>
+                            <td class = "hover-underline-animation" style="color: #0d6efd;" onmouseenter="this.style.color='#1a68db';this.style.cursor = 'pointer';">SALE</td>
+                            <td class = "hover-underline-animation" style="color: #0d6efd;" onmouseenter="this.style.color='#1a68db';this.style.cursor = 'pointer';">FEATURED</td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 20%;"></td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+
+<div class="" style="height: 450px;width: 100%;">
+  <img src="./assets/banner/banner_3.jpg" alt="banner" width="100%" />
+  <hr>
+</div>
+    
+  <div class="text-center"><h4 style="font-family:Work Sans;font-style:bold;">ALL WATCHES</h4></div><br>
+
+
+
+<div class="container-fluid ">
+  <div class="left" style="width: 25%;position: absolute;margin-top: 92px;" >
+  
+    <span class="" style="font-size: large; justify-content: center;display: flex;left: 25px;"><i class="fa-lg fa fa-filter" aria-hidden="true" ></i>Filters</span>
+    
+    <ul class="mainmenu filters" style="display: flex;">
+      <li id="btn_price" >
+          <button class="QuickViewPlp_filter" >Price</button>
+          <ul class="submenu filters" style="width: 250px;">
+              <li style="padding-top: 0px;font-size: 1.1rem;"><span>
+                <input type="radio" name="prc" id="prc1" value = "1000" onclick="fnc_pricefilter(this);"><label for="prc1"> > 1000 </label>
+              </span></li>
+              <hr>
+              
+              <li style="padding-top: 0px;font-size: 1.1rem;" ><span>
+                <input type="radio" name="prc" id="prc2" value = "5000" onclick="fnc_pricefilter(this);"><label for="prc2"> > 15000</label>
+              </span></li>
+              <hr>
+              <li style="padding-top: 0px;font-size: 1.1rem;" ><span>
+                <input type="radio" name="prc" id="prc3" value = "15000" onclick="fnc_pricefilter(this);"><label for="prc3"> > 15000</label>
+              </span></li>
+              <hr>
+              <li style="padding-top: 0px;font-size: 1.1rem;" ><span>
+                <input type="radio" name="prc" id="prc4" value = "50000" onclick="fnc_pricefilter(this);"><label for="prc4"> > 50000</label>
+              </span></li>
+              <hr>
+          </ul>
+      </li>
+      <br>
+      <br>
+      <li>
+        <button class="QuickViewPlp_filter" id="genunie" >Authentic</button>
+          <ul class="submenu filters" style="width: 250px;">
+              <li style="padding-top: 0px;font-size: 1.1rem;"><span>
+                <input type="radio" name="genuine-rdb" onchange="rdb_fnc_change(this)" value="t" id="genuine-rdb"><label for="genuine-rdb"> Genuine</label><br>
+                <input type="radio" name="genuine-rdb" onchange="rdb_fnc_change(this)" value="f" id="genuine-rdb"><label for="genuine-rdb"> Fake</label>
+              </span></li>
+              <hr>
+          </ul>
+      </li>
+    </ul>
+
+  
+  </div>  
+  <div class="right" style="position: absolute;"><div class="row" id="product_row" style="right: 0;width: 75%;"></div></div>
+  
+</div>
+
+
+
+
+
+
+<!-- The Modal -->
+
+<div id="myModal" class="modal" style="top: -52px;">
+  <div class="modal-content">
+    <div class="modal-header">
+      
+      <!-- item added to cart popup - start -->
+      <div id="notication-popup" class="notication-popup hidden">
+          <div class="center">Item Added to Cart!!!</div>
+      </div>
+      <!-- item added to cart popup - end -->
+      
+      <span class="close">&times;</span>
+      <h2>Modal Header</h2>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <div class="row" >
+          <table>
+              <tr>
+                  <td style="width: 40%;left:0;overflow-x: hidden;top: 0;z-index: 1;position: relative;">
+                      <div class="col" >
+                          <img id="image" height="420" width="420" src="" alt="">
+                      </div>
+                  </td>
+                  <td style="width:60%;right:0;overflow-x: hidden;top: 0;z-index: 1;position: relative;">
+                      <div class="col" >
+                          <div ><h4 id="name"></h4></div><br><br>
+                          <div >MRP:<h4 id="price"></h4></div>
+                          <div id="highlight"></div>
+                      </div>
+                  </td>
+              </tr>
+          </table>
+      </div>
+    </div>
+    <hr>
+    <div class="modal-footer" style="right:0px;">
+      <button type="button"  class="QuickViewPlp-modal" onclick="fnc_add_cart(this);added_to_cart_popup();" data-bs-dismiss="modal">ADD TO CART</button>
+    </div>
+  </div>
+</div>
+
+<!-- modal end -->
+
+</body>
+
+</html>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+<script>
+
+  $(document).ready(function(){
+    const user = new setup();
+    user.pic();
+    fill_data();
+
+
+    $(".category-names").hover(function (){
+      $(this).append("<div class='header-menu-list' style='text-decoration:none;position:fixed;overflow: overlay;padding:10px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);width:120px ;background-color: white;'><ul><li><a style='text-decoration:none;color:black;padding: .25rem 1rem;' class='header-list-item' onclick='transfer(this)' onmouseenter=' $(this).parent().css(\"background-color\",\"#ddd\");' onmouseleave = '$(this).parent().css(\"background-color\",\"\");'>View All</a></li><br><li><a style='text-decoration:none;color:black;padding: .25rem 1rem;' class='header-list-item' href='#' onmouseenter=' $(this).parent().css(\"background-color\",\"#ddd\");' onclick='transfer_toall(this)' onmouseleave = '$(this).parent().css(\"background-color\",\"\");'>Featured</a></li></ul></div>");
+            // $(".header-list-item").css("color", "skyblue");
+            $(".header-list-item").css("position", "relative");
+            $(".header-list-item").css("white-space", "nowrap");
+            $(".header-list-item").css("z-index", "1000");
+            $(".header-list-item").css("vertical-align", "inherit");
+            $(".header-list-item").css("background-clip", "padding-box");
+
+            console.log("hello moto");
+        } , function(){
+            $(".header-menu-list").remove();
+            $(".header-list-item").css("color", "black");
+
+        });
+
+        $(".prof , .dropbtn").hover(function () {
+            // hov enter
+            $(".dropbtn").css("display" , "inline");
+            console.log("ok");
+        } , function () {
+            // hov leave
+            $(".dropbtn").css("display" , "none");
+        });
+
+        $(".close").on("click" , function(){
+            let modal = document.getElementById("myModal");
+            modal.style.display = "none";
+
+        });
+
+        window.onclick = function(event) {
+            let modal = document.getElementById("myModal");
+            if (event.target == modal) {
+            modal.style.display = "none";
+            }}
+
+    
+});
+
+
+</script>

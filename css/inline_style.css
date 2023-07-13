@@ -1,0 +1,455 @@
+.alice
+{
+    color: aliceblue;
+    background-color: black;
+}
+
+.nolinkline
+{
+    text-decoration: none;
+}
+
+
+.hover-underline-animation {
+    /* display: inline-block; */
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+ 
+  .btn_color:hover {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+    font-weight: bold;
+}
+
+
+.dropdown-content {
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* side bar css start */
+
+
+.sidebar__ {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar__ a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar__ a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar__ .closebtn__ {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.sidebar__active
+{
+  margin-left: 25%;
+
+}
+
+/* sidebar css end */
+
+/* spacer */
+.spacer
+{
+  height: 70px;
+}
+
+.QuickViewPlp
+    {
+    align-items: center;
+    background-color: #222!important;
+    border-color: #222!important;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 15px;
+    justify-content: center;
+    visibility: hidden;
+    overflow: hidden;
+    }
+
+.modal_cart
+{
+  align-items: center;
+  background-color: #222!important;
+  border-color: #222!important;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  height: 50px;
+  margin-bottom: 15px;
+  justify-content: center;
+  }
+
+  .QuickViewPlp-modal
+    {
+    align-items: center;
+    background-color: #222!important;
+    border-color: #222!important;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 15px;
+    justify-content: center;
+    /* overflow: hidden; */
+    /* justify-self: right; */
+    position: relative;
+    }
+
+    .text-center
+    {
+      justify-content: center;
+      display: grid;
+      align-content: center;
+    }
+
+    body{
+      font-family: var(--bs-font-sans-serif);
+      background-color: aliceblue;
+  }
+  .cart
+  {
+      float: right;
+      margin-right: 20px;
+      text-decoration: none;
+      /* bottom: 10px; */
+  }
+
+  .cart:hover 
+  {
+      color: skyblue;
+  }
+
+  .sign-in
+  {
+      float: left;
+      margin-left: 20px;
+      text-decoration: none;
+      /* margin-top: 20px; */
+  }
+  .prof
+  {
+      position: relative;
+      top: 9px;
+  }
+
+  .category-names:hover
+  {
+      
+      margin-left: 20px;
+      text-decoration: none;
+      color: #1a68db;
+  }
+  .category-names
+  {
+      color: #0d6efd;
+      cursor: pointer;
+
+  }
+
+  .sign-in:hover
+  {
+      color: skyblue;
+  }
+
+
+  .dropbtn {
+user-select:none;
+min-height: 90px;
+padding: 1rem;
+font-size: 16px;
+border: none;
+cursor: pointer;
+border-radius: .3rem;
+font-size: large;
+}
+
+.dropdown-item{
+  margin-top: 5px;
+}
+
+#profile:hover .dropbtn{display: inline; }
+
+#profile {padding: 10px;}
+#sign-in{padding: 10px;}
+
+
+a{
+  text-decoration: none;
+}
+
+  
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 100px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+position: relative;
+background-color: #fefefe;
+margin: auto;
+padding: 0;
+border: 1px solid #888;
+width: 80%;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+-webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.4s;
+animation-name: animatetop;
+animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+from {top:-300px; opacity:0} 
+to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+color: black;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+.modal-header {
+padding: 2px 16px;
+/* background-color: #5cb85c; */
+color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+padding: 2px 16px;
+/* background-color: #5cb85c; */
+color: white;
+}
+
+/* item added to cart start */
+.notication-popup
+{
+  position: absolute;
+  z-index: 0;
+  height: 20px;
+  top: 25%;
+  color: aliceblue;
+  left: 45%;
+  font-weight:bold; 
+  background-color: #2196F3;
+  justify-self: center;
+  padding: 20px 20px 20px 20px;
+  /* display: none; */
+}
+
+.visible
+{
+  visibility: visible;
+opacity: 1;
+transition: opacity 1s linear;
+}
+
+.hidden {
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.left{
+  left:0;
+}
+.abs{
+  position: absolute;
+}
+
+.right{
+  right: 0;
+}
+.tabs{
+  
+  position: absolute;
+  z-index: 0;
+  height: 20px;
+  top: 15%;
+  color: aliceblue;
+  font-weight: bold;
+  background-color: #2196F3;
+  justify-self: center;
+  padding: 20px 20px 20px 20px;
+  /* display: none; */
+  bottom: 100px;
+  margin-top: 50px;
+  width: 20%;
+}
+
+.profile-input{
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: normal;
+  text-align: start;
+  letter-spacing: normal;
+  color: #878787;
+  background-color: #fafafa;
+  /* padding: 10px 10px 10px 10px ; */
+   padding-left: 10px;
+   
+   margin-left: 20px;
+  box-shadow: none;
+  height: 40px;
+}
+
+.profile-label{
+  font-size: 18px;
+  line-height: 25.2px;
+  text-align: start;
+  color: #212121;
+  padding-bottom: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.filters{
+  list-style: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+ }
+ 
+ .mainmenu > li {
+  float: left;
+ }
+ .mainmenu button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+ }
+ .mainmenu button:hover,
+ .mainmenu button:focus {
+  outline: 0;
+  text-decoration: underline;
+ }
+ 
+ .submenu {
+  display: block;
+  position: absolute;
+  padding: 10px;
+ }
+ .submenu > li{
+  padding: 20px 20px 0px 20px;
+  
+ }
+ 
+
+ .QuickViewPlp_filter
+    {
+    align-items: center;
+    background-color: #222!important;
+    border-color: #222!important;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 15px;
+    justify-content: center;
+    overflow: hidden;
+    width: 300px;
+    }
+
+    #genunie{
+      margin-top: 120px;
+
+    }
+
+    .tilt1{
+      transform: skewY(15deg);
+    }
+
+    .tilt2
+    {
+      transform: skewY(-15deg);
+
+    }
+
+    .tilt3
+    {
+      transform: rotate(45deg);
+    }

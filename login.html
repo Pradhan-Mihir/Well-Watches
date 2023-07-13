@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-WW</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+    function fnc_login()
+    {
+        let id = document.getElementById('id');
+        let pass = document.getElementById('password-field');
+
+        if(id.value === '' || id.value === undefined || pass.value === '' || pass.value === undefined )
+            return;
+        
+        fetch('./users.json').then(function (results){
+            return results.json();
+            console.log("inside this");
+        }).then(function (data){
+            for(let i = 0 ; i < data["Users"].length;i++)
+            {
+                // console.log(data["Users"][i]);
+                if(data["Users"][i].username == id.value && data["Users"][i].password == pass.value)
+                {
+                    sessionStorage.setItem("User",id.value);
+                    window.location.replace("./index.html");
+                    return true;
+                }
+                else
+                {
+                    document.getElementById("incorrect-warning").innerHTML = "Incorrect Username or Password!";
+                    document.getElementById("incorrect-warning").hidden = false;
+                    document.getElementById("incorrect-warning").style.display= "block";
+                    return false;
+                }
+            }
+        }); 
+    }
+</script>
+
+</head>
+<body class="img js-fullheight" style="background-image: url(assets/images/bg.jpg);background-size: cover;background-position: center center;">
+	<section style="padding: 7em 0;">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 style="font-size: 28px;color: #fff;text-decoration-thickness:inherit;">Sign In</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div style="text-align: center !important;color: rgba(255, 255, 255, 0.9);">
+		      	<h3 style="font-weight: 300;color: #fff;">Welcome Back!</h3>
+                <h3 id="incorrect-warning" hidden style="font-weight: 300;color: #fff; border: 1rem; border-color: white;background-color: red;border-radius: 50px; display: none;"></h3>
+		      	<form action="#" class="signin-form">
+		      		<div class="form-group" style="margin-bottom: 1rem;">
+		      			<input type="text" id = "id" class="form-control" style="overflow: visible;background: transparent;height: 50px;color: white !important;border: 1px solid transparent;background: rgba(255, 255, 255, 0.08);border-radius: 40px;padding-left: 20px;padding-right: 20px;-webkit-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;" placeholder="Username" required>
+		      		</div>
+	            <div class="form-group" style="position: relative;margin-bottom: 1rem;">
+	              <input id="password-field" type="password" class="form-control" style="    border: none;    height: 50px;    color: white !important;    border: 1px solid transparent;    background: rgba(255, 255, 255, 0.08);    border-radius: 40px;    padding-left: 20px;    padding-right: 20px;    -webkit-transition: 0.3s;    -o-transition: 0.3s;    transition: 0.3s;" placeholder="Password" required>
+	              <span toggle="#password-field" style="    position: absolute;    top: 50%;    right: 15px;    -webkit-transform: translateY(-50%);    -ms-transform: translateY(-50%);    transform: translateY(-50%);    color: rgba(255, 255, 255, 0.9);" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" onclick="fnc_login();" style="padding-left: 1rem !important;padding-right: 1rem !important;    background-color: transparent  !important;    letter-spacing: 2px;color: rgb(255, 255, 255) !important;cursor: pointer;border-radius: 40px;-webkit-box-shadow: none !important;box-shadow: none !important;font-size: 15px;text-transform: uppercase;height: 50px;" class="form-control btn btn-primary submit ">Sign In</button>
+	            </div>
+	          </form>
+	          
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+
+	</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        if(sessionStorage.getItem("User"))
+            Response.redirect("./index.html");
+    });
+</script>
